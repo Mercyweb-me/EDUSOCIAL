@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { BookOpen, Users, CheckCircle } from "lucide-react";
-
+import Navabar from "../Components/Navarbar"
+import Footer from "../Components/Footer"
 const LandingPage = () => {
   return (
+    <>
+    <Navabar/>
     <div className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-100 min-h-screen text-gray-800">
       {/* Hero Section */}
       <div className="flex flex-col items-center justify-center text-center py-24 px-6 bg-[url('/imageBack.webp')] bg-cover bg-center relative">
@@ -107,6 +110,8 @@ const LandingPage = () => {
         </Link>
       </section>
     </div>
+    <Footer/>
+    </>
   );
 };
 
