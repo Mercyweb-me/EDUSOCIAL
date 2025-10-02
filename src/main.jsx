@@ -1,7 +1,6 @@
 import { StrictMode } from "react"; 
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./Pages/Homepage.jsx";
 import LandingPage from "./Pages/LandingPage.jsx";
 import GetStarted from "./Pages/GetStarted.jsx";
 import LoginPage from "./Pages/Login.jsx";
