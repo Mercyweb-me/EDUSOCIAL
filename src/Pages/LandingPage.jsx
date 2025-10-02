@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { BookOpen, Users, CheckCircle } from "lucide-react";
-import Navabar from "../Components/Navarbar"
+import Navabar from "../Components/Navabar"
 import Footer from "../Components/Footer"
 const LandingPage = () => {
   return (
