@@ -2,16 +2,17 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/Homepage.jsx";
-import StudentPage from "./Pages/StudentPage.jsx";
-import AdminPage from "./Pages/AdminPage.jsx";
 import LandingPage from "./Pages/LandingPage.jsx";
 import GetStarted from "./Pages/GetStarted.jsx";
-import AdminSignUp from "./Pages/AdminSignup.jsx";
-import AdminLogin from "./Pages/AdminLogin.jsx";
-import StudentLogin from "./Pages/StudentLogin.jsx";
-import StudentSignUp from "./Pages/Studentsignup.jsx";
-
+import LoginPage from "./Pages/Login.jsx";
+import AdminDashbord from "./Pages/AdminDashbord.jsx";
+import RegisterPage from "./Pages/RegisterPage.jsx";
+import StudentDashbord from "./Pages/StudentDashbord.jsx";
+import CourseDetails from "./Pages/CourseDetails.jsx"
+import StudentCourseDetails from "./Pages/StudentCourseDetails"
+import StudentCertificate from "./Pages/StudentCertificate"
 import "./App.css";
+
   
 
 
@@ -21,14 +22,16 @@ createRoot(document.getElementById("root")).render(
       <Routes> 
         < Route path="/" element={<HomePage/>}/>
         < Route path="/first" element={<GetStarted/>}/>
-        < Route path="/student" element={<StudentPage/>}/>
-        < Route path="/admin" element={<AdminPage/>}/>
         < Route path="/landing" element={<LandingPage/>}/>
         < Route path="/get-started" element={<GetStarted/>}/>
-        < Route path="/admin" element={<AdminSignUp/>}/>
-        < Route path="/admin/login" element={<AdminLogin/>}/>
-        < Route path="/student/login" element={<StudentLogin/>}/>
-        < Route path="/student/signup" element={<StudentSignUp/>}/>
+        <Route path="/Admin/Dashbord" element={<AdminDashbord/>}/>
+    <Route path="/Login" element={<LoginPage/>}/>
+        < Route path="/Register/Page" element={<RegisterPage/>}/>
+        <Route path="/Student/Dashbord" element={<StudentDashbord/>}/>
+        <Route path="/Courses/:id" element={<CourseDetails/>}/>
+        <Route path="/student/courses/:id" element={<StudentCourseDetails />} />
+<Route path="/Student/Certificate/:id" element={<StudentCertificate />} />
+
         
 
       </Routes>

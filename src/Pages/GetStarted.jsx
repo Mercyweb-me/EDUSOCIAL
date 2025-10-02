@@ -7,7 +7,7 @@ import Footer from "../Components/Footer";
 
 
 
-export default function LandingPage() {
+ const GetStarted = ()=> {
   return (
     
     <>
@@ -34,16 +34,16 @@ export default function LandingPage() {
        
         <div className="flex space-x-25 ">
           <Link 
-            to="/admin">
+            to="/Login">
           <button className="px-25 py-25 bg-linear-to-t from yellow-800 to-blue-300 shadow-md text-white text-lg rounded-full shadow-lg hover:scale-105 hover:bg-indigo-700 transition font-serif">
-            <span className=" text-xl font-extrabold text-pink-300">C</span>ontinue as Admin
+            <span className=" text-xl font-extrabold text-pink-300">L</span>ogin
           </button>
           </Link>
 
            <Link 
-            to="/student/signup">
+            to="/Register/Page">
           <button className="px-25 py-25 bg-linear-to-t from orange-800 to-pink-300 shadow-md text-white text-lg rounded-full shadow-lg hover:scale-105 hover:bg-green-700 transition font-serif">
-            <span className="font-extrabold text-xl text-yellow-300">C</span>ontinue as Student
+            <span className="font-extrabold text-xl text-yellow-300">R</span>egistration
           </button>
           </Link>
         </div>
@@ -98,3 +98,4 @@ export default function LandingPage() {
   );
 }
 
+export default GetStarted;
