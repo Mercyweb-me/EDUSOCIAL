@@ -109,72 +109,76 @@ export default function Navabar() {
         </div>
       </div>
 
-      {/* Mobile dropdown menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white shadow-md px-4 py-3 space-y-2 font-serif">
+     {/* Mobile dropdown menu */}
+{isOpen && (
+  <div className="md:hidden bg-white shadow-md px-4 py-3 space-y-2 font-serif">
+    <Link
+      to="/"
+      className="block hover:text-blue-600"
+      onClick={() => setIsOpen(false)}
+    >
+      Home
+    </Link>
+
+    {!user ? (
+      <>
+        <Link
+          to="/get-started"
+          className="block hover:text-blue-600"
+          onClick={() => setIsOpen(false)}
+        >
+          Get Started
+        </Link>
+        <Link
+          to="/Register/Page"
+          className="block hover:text-blue-600"
+          onClick={() => setIsOpen(false)}
+        >
+          Register
+        </Link>
+        <Link
+          to="/Login"
+          className="block hover:text-blue-600"
+          onClick={() => setIsOpen(false)}
+        >
+          Login
+        </Link>
+      </>
+    ) : (
+      <>
+        {role === "admin" && (
           <Link
-            to="/"
+            to="/Admin/Dashbord"
             className="block hover:text-blue-600"
             onClick={() => setIsOpen(false)}
           >
-            Home
+            Dashboard
           </Link>
+        )}
+        {role === "student" && (
+          <Link
+            to="/Student/Dashbord"
+            className="block hover:text-blue-600"
+            onClick={() => setIsOpen(false)}
+          >
+            Dashboard
+          </Link>
+        )}
 
-          {!user ? (
-            <>
-              <Link
-                to="/get-started"
-                className="block hover:text-blue-600"
-                onClick={() => setIsOpen(false)}
-              >
-                Get Started
-              </Link>
-              <Link
-                to="/auth/admin"
-                className="block hover:text-blue-600"
-                onClick={() => setIsOpen(false)}
-              >
-                Admin
-              </Link>
-              <Link
-                to="/auth/student"
-                className="block hover:text-blue-600"
-                onClick={() => setIsOpen(false)}
-              >
-                Student
-              </Link>
-            </>
-          ) : (
-            <>
-              {role === "admin" && (
-                <Link
-                  to="/admin/dashboard"
-                  className="block hover:text-blue-600"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Dashboard
-                </Link>
-              )}
-              {role === "student" && (
-                <Link
-                  to="/student/dashboard"
-                  className="block hover:text-blue-600"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Dashboard
-                </Link>
-              )}
+        <button
+          onClick={() => {
+            handleLogout();
+            setIsOpen(false);
+          }}
+          className="w-full text-left px-4 py-2 hover:bg-gray-100"
+        >
+          Logout
+        </button>
+      </>
+    )}
+  </div>
+)}
 
-              <button
-                onClick={handleLogout}
-                className="w-full text-left px-4 py-2 hover:bg-gray-100"
-              >
-                Logout
-              </button>
-            </>
-          )}
-        </div>
-      )}
     </nav>
   );
 }
